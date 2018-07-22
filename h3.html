@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<style type="text/css">
+ul{
+  list-style:none;
+  margin:0px;
+  padding:0px;
+  text-align:center;
+}
+#main{
+  width:98px;
+  height:20px;
+  float:left;
+  border:1px solid #777;
+  overflow:hidden;
+}
+#gd{
+  list-style:none outside none;
+  height:20px;
+  display:block;
+  background:yellow;
+  position:relative;
+  width:9999em;
+}
+#gd li{
+  width:20px;
+  height:20px;
+  display:block;
+  float:left;
+   margin-right: 5px;
+}
+#box{
+  width:160px;
+  height:20px;
+  background:#ccc;
+  margin:0 auto
+}
+#toleft,
+#toright{
+  width:20px;
+  height:20px;
+  background:red;
+  margin:0px 5px;
+  float:left;
+  cursor:pointer;
+}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){ 
+  var pic_length=$('#gd li').length; 
+ // alert(pic_length);
+  var n=0; 
+  $('#toleft').mouseover(function(){
+    if(!$('#gd').is(':animated')&&n){
+      $('#gd').animate({left:'+=100px'},500);
+      n=n-4;
+    }
+  }); 
+  $('#toright').mouseover(function(){
+    if (!$('#gd').is(':animated')&&pic_length>n+5){
+      $('#gd').animate({left:'-=100px'},500);
+      n=n+4;
+    }
+  })
+}) 
+</script>
+</head>
+<body>
+<div id="box">
+  <div id="toleft"></div>
+  <div id="main">
+    <ul id="gd">
+      <li style="background:red"></li>
+      <li style="background:orange"></li>
+      <li style="background:green"></li>
+      <li style="background:navy"></li>
+      <li style="background:blue"></li>
+      <li style="background:purple"></li>
+      <li style="background:pink"></li>
+      <li style="background:gray"></li>
+      <li style="background:green"></li>
+      <li style="background:navy"></li>
+      <li style="background:blue"></li>
+      <li style="background:purple"></li>
+      <li style="background:pink"></li>
+      <li style="background:gray"></li>
+    </ul>
+  </div>
+  <div id="toright"></div>
+</div>
+</body>
+</html>
