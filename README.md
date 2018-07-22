@@ -1,4 +1,4 @@
 # Switch-the-animation
-# boostrap
+ boostrap
  jquery
 
